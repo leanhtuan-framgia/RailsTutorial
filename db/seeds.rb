@@ -9,7 +9,11 @@
    email: "example@railstutorial.org",
    password: "foobar",
    password_confirmation: "foobar",
-   phone_number: "0111111000"
+
+   phone_number: "0111111000",
+   admin: true,
+   activated: true,
+   activated_at: Time.zone.now
 
   99.times do |n|
     name  = Faker::Name.name
@@ -20,5 +24,7 @@
       email: email,
       password: password,
       password_confirmation: password,
-      phone_number: phone_number
+      phone_number: phone_number,
+      activated: true,
+      activated_at: Time.zone.now
   end
