@@ -6,6 +6,8 @@ class Micropost < ApplicationRecord
   validate :picture_size
 
   scope :order_by_time, -> {order created_at: :desc}
+  scope :feeds,
+    ->(other_ids, id) {where("user_id IN (?) OR user_id = ?", other_ids, id)}
 
   private
   def picture_size
