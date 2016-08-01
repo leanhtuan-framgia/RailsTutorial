@@ -1,6 +1,6 @@
 <% if @feed_items.any? %>
   <ol class="microposts">
-    <%= render @feed_items %>
+    <%= render @feed_items.order_by_time %>
   </ol>
   <%= will_paginate @feed_items %>
 <% end %>
